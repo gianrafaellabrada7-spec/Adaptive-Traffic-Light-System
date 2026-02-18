@@ -6,6 +6,9 @@ Hello friends! This is mainly for the completion of our research titled "Evaluat
 You need to download SUMO, installed to DIR. The TraCi Python script is used as the Python script for SUMO.
 Required Python Libary:
   pip install traci
+
+Make sure to put all downloaded files on the same folder except master and slave as they are hardware based stuffs.
+
 Download everything and then change the traffic.rou something name to traffic.rou.xml depending on which one you want to test first. 
 EG.
   traffic.rou - balanced.xml to traffic.rou.xml
@@ -49,5 +52,35 @@ For physical implementation with ESP32 microcontrollers:
 ├── run_simulation_fixed.py          # Fixed-time simulation
 ├── run_simulation_*_with_seeds.py   # Statistical validation versions
 └── compare_three_systems.py         # Performance comparison tool (We didnt really use this)
+```
 
+To compare the data, u should be getting something like the thing below after doing:
+  python run_simulation_binary.py
+======================================================================
+SIMULATION RESULTS - Binary Ultrasonic System
+======================================================================
+Duration: 3600 seconds (60.0 minutes)
+Total Cycles: 239
+Vehicles Processed: 816
+Average Waiting Time: 13.44 seconds
+Throughput: 816 vehicles/hour
+======================================================================
+To compare the systems, do each manually and record the results
+
+Alternatively, u can use the automated comparison tool:
+python compare_three_systems.py
+u should see 3 tripinfos:
+  tripinfo_fixed.xml, tripinfo_binary.xml, tripinfo_queue.xml
+if you do not see it, u can manually check and rename the tripinfo.
+
+
+lastly you can perform ANOVA manually or through csv
+Excel ANOVA Steps:
+
+  Open all three CSV files
+  Copy the avg_wait column from each into a single sheet (three columns)
+  Go to Data → Data Analysis → Anova: Single Factor
+  Select your three columns
+  Click OK to get F-statistic and p-value
+or just do it manually like we did.
 
