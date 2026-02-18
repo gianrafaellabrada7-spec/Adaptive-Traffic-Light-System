@@ -23,11 +23,31 @@ or alternatively, you can write [for no seeds (randomness)]
 For more questions, contact:
   gianrafaellabrada7@gmail.com
 
-
 For physical implementation with ESP32 microcontrollers:
 
 1. Upload master code to the master ESP32
 2. Upload slave code to each of the 3 slave ESP32s (one per approach)
 3. Configure intersection_id in slave code (0, 1, or 2)
 4. Connect HC-SR04 ultrasonic sensors to designated pins
-5. Update MAC addresses in master code to match your slave ESP32s 
+5. Update MAC addresses in master code to match your slave ESP32s (search up tutorials on how to get it)
+6. Change the wifi name and password too, for this we just used our phone hotspot .
+
+## 📁 Repository Structure
+```
+├── master/                          # Master ESP32 code
+├── slave/                           # Slave ESP32 code (3 units)
+├── intersection.net.xml             # SUMO network topology
+├── intersection.nod.xml             # Junction definitions
+├── intersection.edg.xml             # Road segment definitions
+├── fixed_timing.add.xml             # Fixed-time signal plan
+├── simulation.sumocfg               # SUMO configuration (adaptive)
+├── simulation_fixed.sumocfg         # SUMO configuration (fixed-time)
+├── traffic.rou - balanced.xml       # Balanced traffic pattern
+├── traffic.rou - actual.xml         # Real-world traffic pattern
+├── run_simulation_binary.py         # Binary sensor simulation
+├── run_simulation_queue_based.py    # Queue detection simulation
+├── run_simulation_fixed.py          # Fixed-time simulation
+├── run_simulation_*_with_seeds.py   # Statistical validation versions
+└── compare_three_systems.py         # Performance comparison tool (We didnt really use this)
+
+
