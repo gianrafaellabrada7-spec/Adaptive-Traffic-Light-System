@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- REAL FIELD DATA - 60% Scaled for Optimal Performance Study -->
+<!-- Based on actual 5:30-6:30 PM measurements, scaled to 60% -->
+<!-- Peak demand: ~2,328 veh/hr (near capacity) -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="50" guiShape="passenger"/>
+    
+    <!-- Route Definitions -->
+    <route id="route_r1_straight" edges="r1_in r1_out"/>
+    <route id="route_r2_left" edges="r2_in r2_out_left"/>
+    <route id="route_r2_straight" edges="r2_in r2_out_straight"/>
+    <route id="route_r3_straight" edges="r3_in r3_out"/>
+    
+    <!--
+    
+    SCALED REAL TRAFFIC - 60% of Evening Rush Hour Measurements
+    Original Collection Time: 5:30 PM - 6:30 PM
+    Scaling Factor: 0.6 (represents "busy but manageable" traffic)
+    
+    
+    Original vs Scaled Traffic Volumes:
+    
+    Period         | Original | Scaled (60%) | Hourly Equivalent
+    |||
+    5:30 - 5:42 PM |   776    |     466      | 2,328 veh/hr
+    5:42 - 5:54 PM |   719    |     431      | 2,157 veh/hr
+    5:54 - 6:06 PM |   755    |     453      | 2,265 veh/hr
+    6:06 - 6:18 PM |   589    |     353      | 1,767 veh/hr
+    6:18 - 6:30 PM |   529    |     317      | 1,587 veh/hr
+    |||
+    TOTAL          |  3,368   |    2,021     | 2,021 veh/hr avg
+    
+    -->
+    
+    <!--  -->
+    <!-- PERIOD 1: 5:30-5:42 PM (0-720s)            -->
+    <!-- 60% of 776 vehicles = 466 veh/12min        -->
+    <!-- Equivalent: 2,328 veh/hr                   -->
+    <!--  -->
+    
+    <!-- R1: 343 × 0.6 = 206 veh/12min = 1,029 veh/hr -->
+    <flow id="flow_r1_period1" type="car" route="route_r1_straight" 
+          begin="0" end="720" vehsPerHour="1029" departLane="best" departSpeed="max"/>
+    
+    <!-- R2 Left: 45 × 0.6 = 27 veh/12min = 135 veh/hr -->
+    <flow id="flow_r2_left_period1" type="car" route="route_r2_left" 
+          begin="0" end="720" vehsPerHour="135" departLane="0" departSpeed="max"/>
+    
+    <!-- R2 Straight: 268 × 0.6 = 161 veh/12min = 804 veh/hr -->
+    <flow id="flow_r2_straight_period1" type="car" route="route_r2_straight" 
+          begin="0" end="720" vehsPerHour="804" departLane="1" departSpeed="max"/>
+    
+    <!-- R3: 120 × 0.6 = 72 veh/12min = 360 veh/hr -->
+    <flow id="flow_r3_period1" type="car" route="route_r3_straight" 
+          begin="0" end="720" vehsPerHour="360" departLane="best" departSpeed="max"/>
+    
+    <!--  -->
+    <!-- PERIOD 2: 5:42-5:54 PM (720-1440s)         -->
+    <!-- 60% of 719 vehicles = 431 veh/12min        -->
+    <!-- Equivalent: 2,157 veh/hr                   -->
+    <!--  -->
+    
+    <!-- R1: 242 × 0.6 = 145 veh/12min = 726 veh/hr -->
+    <flow id="flow_r1_period2" type="car" route="route_r1_straight" 
+          begin="720" end="1440" vehsPerHour="726" departLane="best" departSpeed="max"/>
+    
+    <!-- R2 Left: 88 × 0.6 = 53 veh/12min = 264 veh/hr -->
+    <flow id="flow_r2_left_period2" type="car" route="route_r2_left" 
+          begin="720" end="1440" vehsPerHour="264" departLane="0" departSpeed="max"/>
+    
+    <!-- R2 Straight: 294 × 0.6 = 176 veh/12min = 882 veh/hr -->
+    <flow id="flow_r2_straight_period2" type="car" route="route_r2_straight" 
+          begin="720" end="1440" vehsPerHour="882" departLane="1" departSpeed="max"/>
+    
+    <!-- R3: 95 × 0.6 = 57 veh/12min = 285 veh/hr -->
+    <flow id="flow_r3_period2" type="car" route="route_r3_straight" 
+          begin="720" end="1440" vehsPerHour="285" departLane="best" departSpeed="max"/>
+    
+    <!--  -->
+    <!-- PERIOD 3: 5:54-6:06 PM (1440-2160s)        -->
+    <!-- 60% of 755 vehicles = 453 veh/12min        -->
+    <!-- Equivalent: 2,265 veh/hr                   -->
+    <!--  -->
+    
+    <!-- R1: 220 × 0.6 = 132 veh/12min = 660 veh/hr -->
+    <flow id="flow_r1_period3" type="car" route="route_r1_straight" 
+          begin="1440" end="2160" vehsPerHour="660" departLane="best" departSpeed="max"/>
+    
+    <!-- R2 Left: 93 × 0.6 = 56 veh/12min = 279 veh/hr -->
+    <flow id="flow_r2_left_period3" type="car" route="route_r2_left" 
+          begin="1440" end="2160" vehsPerHour="279" departLane="0" departSpeed="max"/>
+    
+    <!-- R2 Straight: 301 × 0.6 = 181 veh/12min = 903 veh/hr -->
+    <flow id="flow_r2_straight_period3" type="car" route="route_r2_straight" 
+          begin="1440" end="2160" vehsPerHour="903" departLane="1" departSpeed="max"/>
+    
+    <!-- R3: 141 × 0.6 = 85 veh/12min = 423 veh/hr -->
+    <flow id="flow_r3_period3" type="car" route="route_r3_straight" 
+          begin="1440" end="2160" vehsPerHour="423" departLane="best" departSpeed="max"/>
+    
+    <!--  -->
+    <!-- PERIOD 4: 6:06-6:18 PM (2160-2880s)        -->
+    <!-- 60% of 589 vehicles = 353 veh/12min        -->
+    <!-- Equivalent: 1,767 veh/hr                   -->
+    <!--  -->
+    
+    <!-- R1: 204 × 0.6 = 122 veh/12min = 612 veh/hr -->
+    <flow id="flow_r1_period4" type="car" route="route_r1_straight" 
+          begin="2160" end="2880" vehsPerHour="612" departLane="best" departSpeed="max"/>
+    
+    <!-- R2 Left: 60 × 0.6 = 36 veh/12min = 180 veh/hr -->
+    <flow id="flow_r2_left_period4" type="car" route="route_r2_left" 
+          begin="2160" end="2880" vehsPerHour="180" departLane="0" departSpeed="max"/>
+    
+    <!-- R2 Straight: 233 × 0.6 = 140 veh/12min = 699 veh/hr -->
+    <flow id="flow_r2_straight_period4" type="car" route="route_r2_straight" 
+          begin="2160" end="2880" vehsPerHour="699" departLane="1" departSpeed="max"/>
+    
+    <!-- R3: 92 × 0.6 = 55 veh/12min = 276 veh/hr -->
+    <flow id="flow_r3_period4" type="car" route="route_r3_straight" 
+          begin="2160" end="2880" vehsPerHour="276" departLane="best" departSpeed="max"/>
+    
+    <!--  -->
+    <!-- PERIOD 5: 6:18-6:30 PM (2880-3600s)        -->
+    <!-- 60% of 529 vehicles = 317 veh/12min        -->
+    <!-- Equivalent: 1,587 veh/hr                   -->
+    <!--  -->
+    
+    <!-- R1: 161 × 0.6 = 97 veh/12min = 483 veh/hr -->
+    <flow id="flow_r1_period5" type="car" route="route_r1_straight" 
+          begin="2880" end="3600" vehsPerHour="483" departLane="best" departSpeed="max"/>
+    
+    <!-- R2 Left: 104 × 0.6 = 62 veh/12min = 312 veh/hr -->
+    <flow id="flow_r2_left_period5" type="car" route="route_r2_left" 
+          begin="2880" end="3600" vehsPerHour="312" departLane="0" departSpeed="max"/>
+    
+    <!-- R2 Straight: 176 × 0.6 = 106 veh/12min = 528 veh/hr -->
+    <flow id="flow_r2_straight_period5" type="car" route="route_r2_straight" 
+          begin="2880" end="3600" vehsPerHour="528" departLane="1" departSpeed="max"/>
+    
+    <!-- R3: 88 × 0.6 = 53 veh/12min = 264 veh/hr -->
+    <flow id="flow_r3_period5" type="car" route="route_r3_straight" 
+          begin="2880" end="3600" vehsPerHour="264" departLane="best" departSpeed="max"/>
+    
+</routes>
