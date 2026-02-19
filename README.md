@@ -56,15 +56,20 @@ For physical implementation with ESP32 microcontrollers:
 
 To compare the data, u should be getting something like the thing below after doing:
   python run_simulation_binary.py
-======================================================================
-SIMULATION RESULTS - Binary Ultrasonic System
-======================================================================
+
+### SIMULATION RESULTS - Binary Ultrasonic System
+```
 Duration: 3600 seconds (60.0 minutes)
+
 Total Cycles: 239
+
 Vehicles Processed: 816
+
 Average Waiting Time: 13.44 seconds
+
 Throughput: 816 vehicles/hour
-======================================================================
+```
+
 To compare the systems, do each manually and record the results
 
 Alternatively, you can use the automated comparison tool:
@@ -84,3 +89,6 @@ Excel ANOVA Steps:
   Click OK to get F-statistic and p-value
 or just do it manually like we did.
 
+
+
+Also, do note that the logic of the sensors could be improved upon for future research, this was simply how we compared.
