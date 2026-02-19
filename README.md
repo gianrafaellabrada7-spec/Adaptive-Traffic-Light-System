@@ -1,10 +1,10 @@
 # araphel
 Adaptive Traffic Light
 
-Hello friends! This is mainly for the completion of our research titled "Evaluating the Operational Efficiency of an Arduino-Controlled Traffic Light System In Urban Road Management"
+Hello friends! This is mainly for the completion of our research titled "Evaluating the Operational Efficiency of an Arduino-Controlled Turaffic Light System In Urban Road Management"
 
 You need to download SUMO, installed to DIR. The TraCi Python script is used as the Python script for SUMO.
-Required Python Libary:
+Required Python Library:
   pip install traci
 
 Make sure to put all downloaded files on the same folder except master and slave as they are hardware based stuffs.
@@ -67,11 +67,11 @@ Throughput: 816 vehicles/hour
 ======================================================================
 To compare the systems, do each manually and record the results
 
-Alternatively, u can use the automated comparison tool:
+Alternatively, you can use the automated comparison tool:
 python compare_three_systems.py
-u should see 3 tripinfos:
+you should see 3 tripinfos:
   tripinfo_fixed.xml, tripinfo_binary.xml, tripinfo_queue.xml
-if you do not see it, u can manually check and rename the tripinfo.
+if you do not see it, you can manually check and rename the tripinfo.
 
 
 lastly you can perform ANOVA manually or through csv
