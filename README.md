@@ -14,11 +14,14 @@ EG.
   traffic.rou - balanced.xml to traffic.rou.xml
 
 Then go open CMD then type in (seeds make it random, the 10 trials allow for statistical validation via ANOVA)
+```
 python run_simulation_fixed_with_seeds.py --trials 10 (fixed time)
 python run_simulation_binary_with_seeds.py --trials 10 (binary)
 python run_simulation_queue_with_seeds.py --trials 10 (queue-based)
+```
 
 Additionally, you may rewrite the code 
+```
 def run_single_simulation(seed=None):
 """Run simulation once with optional seed"""
 sumo_binary = "sumo"
@@ -29,9 +32,9 @@ sumo_binary,
 "--start", 
 "--quit-on-end"
 ]
-    
+```    
 to
-
+```
 def run_single_simulation(seed=None):
 """Run simulation once with optional seed"""
 sumo_binary = "sumo-gui"
@@ -42,7 +45,7 @@ sumo_binary,
 "--start", 
 "--quit-on-end"
 ]
-
+```
 
 or alternatively, you can write [for no seeds (randomness)]
   python run_simulation_binary.py
