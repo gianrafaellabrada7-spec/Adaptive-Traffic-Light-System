@@ -20,6 +20,12 @@ python run_simulation_binary_with_seeds.py --trials 10 (binary)
 python run_simulation_queue_with_seeds.py --trials 10 (queue-based)
 ```
 
+
+or alternatively, you can write [for no seeds (randomness)]
+  python run_simulation_binary.py
+  python run_simulation_fixed.py
+  python run_simulation_queue_based.py
+
 Additionally, you may rewrite the code 
 ```
 def run_single_simulation(seed=None):
@@ -48,11 +54,7 @@ def run_single_simulation(seed=None):
     ]
 
 ```
-
-or alternatively, you can write [for no seeds (randomness)]
-  python run_simulation_binary.py
-  python run_simulation_fixed.py
-  python run_simulation_queue_based.py
+to see the GUI of SUMO
 
 For more questions, contact:
   gianrafaellabrada7@gmail.com
