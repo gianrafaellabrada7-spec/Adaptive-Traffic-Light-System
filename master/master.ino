@@ -94,7 +94,7 @@ float getPriority(int i) {
   if (intersections[i].data.emergency || digitalRead(PIN_EMERGENCY_BTN) == LOW) {
     p += 20.0; // Massive priority boost
   }
-  return max(p, 0.1);
+  return max(p, 0.1f);
 }
 
 // ============================================================================
