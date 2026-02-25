@@ -17,6 +17,7 @@ Then go open CMD then type in (seeds make it random, the 10 trials allow for sta
 python run_simulation_fixed_with_seeds.py --trials 10 (fixed time)
 python run_simulation_binary_with_seeds.py --trials 10 (binary)
 python run_simulation_queue_with_seeds.py --trials 10 (queue-based)
+
 Additionally, you may rewrite the code 
 def run_single_simulation(seed=None):
 """Run simulation once with optional seed"""
